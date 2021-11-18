@@ -68,15 +68,15 @@
 .single-thumbs-img {
     width: 100%;
     height: 100%;
-    filter: grayscale(0);
+    filter: grayscale(0.7);
 }
 .single-thumbs-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.single-thumbs-img.active {
-    filter: grayscale(0.8);
+.single-thumbs-img.activegrey {
+    filter: grayscale(0);
 }
 .arrow {
     position: absolute;

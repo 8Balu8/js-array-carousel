@@ -35,10 +35,11 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ];
 
+// Seleziono i contenitori ai quali andrò ad appendere i div conteneti le immagini grandi e le miniature
 const imgContainer = document.querySelector(`.img-container`)
 const thumbsContainer = document.querySelector(`.thumbs-img`)
-console.log(thumbsContainer)
 
+// Con il ciclo for vado a selezionare gli elementi contenuti nelle array li assegno a delle varianti che andranno a popolare i div che dovrò appendere
 for (let i = 0; i < items.length; i++) {
     const thisImg = items[i];
     const thisTitle = title[i];
@@ -70,11 +71,22 @@ let selectImage = 0;
 const bigImgs = document.getElementsByClassName('single-img');
 const thumbsImgs = document.getElementsByClassName('single-thumbs-img');
 bigImgs[selectImage].classList.add('active');
-thumbsImgs[selectImage].classList.add('active');
+thumbsImgs[selectImage].classList.add('activegrey');
 
-// Quando si clicca sulle frecce che appaioni nel thumbs vengono spostate le classi "active"
+// Quando si clicca sulle frecce che appaioni nel thumbs vengono rimosse le classi "active" alle immagini selezionate
 const upArrow = document.querySelector(`.top`);
 upArrow.addEventListener(`click`, function(){
     bigImgs[selectImage].classList.remove(`active`)
-    thumbsImgs[selectImage].classList.remove(`active`)
+    thumbsImgs[selectImage].classList.remove(`activegrey`)
+    if( selectImage < items.length - 1 ) {
+        selectImage++;
+        console.log(selectImage)
+    } else {
+        selectImage = 0;
+    }
+    bigImgs[selectImage].classList.add('active');
+    thumbsImgs[selectImage].classList.add('activegrey');
 })
+
+
+
