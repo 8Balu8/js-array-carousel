@@ -66,6 +66,9 @@
     left: 50%;
     transform: translateX(-50%);
 }
+.arrow a {
+    text-decoration: none;
+}
 .arrow.top {
     top: 10px;
 }
@@ -75,5 +78,9 @@
 .arrow i {
     filter: invert(1);
     font-size: 25px;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.2);
+    display: none;
+}
+.thumbs:hover i {
+    display: block;
 }
