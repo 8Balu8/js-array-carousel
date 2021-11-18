@@ -45,7 +45,7 @@ for (let i = 0; i < items.length; i++) {
     const thisText = text[i];
 
     const newImage = `
-        <div class="single-img active">
+        <div class="single-img">
             <img src="${thisImg}" alt="${i}">
             <div class="single-img-text">
                 <h3>${thisTitle}</h3>
@@ -57,10 +57,24 @@ for (let i = 0; i < items.length; i++) {
     imgContainer.innerHTML += newImage;
 
     const newImageThumbs = `
-        <div class="single-thumbs-img active">
+        <div class="single-thumbs-img">
             <img src="${thisImg}" alt="${i}">
         </div>
     `;
 
     thumbsContainer.innerHTML += newImageThumbs;
 }
+
+// Seleziono l'immagine alla quale assegnare la classe active
+let selectImage = 0;
+const bigImgs = document.getElementsByClassName('single-img');
+const thumbsImgs = document.getElementsByClassName('single-thumbs-img');
+bigImgs[selectImage].classList.add('active');
+thumbsImgs[selectImage].classList.add('active');
+
+// Quando si clicca sulle frecce che appaioni nel thumbs vengono spostate le classi "active"
+const upArrow = document.querySelector(`.top`);
+upArrow.addEventListener(`click`, function(){
+    bigImgs[selectImage].classList.remove(`active`)
+    thumbsImgs[selectImage].classList.remove(`active`)
+})
