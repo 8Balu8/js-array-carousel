@@ -35,3 +35,14 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ];
 
+const imgContainer = document.querySelector(`.img-container`)
+console.log(imgContainer)
+for (let i = 0; i < items.length; i++) {
+    const thisImg = items[i];
+    const thisTitle = title[i];
+    const thisText = text[i];
+
+    console.log(thisImg)
+    console.log(thisTitle)
+    console.log(thisText)
+}
