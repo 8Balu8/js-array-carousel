@@ -47,6 +47,7 @@
 .thumbs {
     width: 30%;
     height: 100%;
+    position: relative;
 
     /* TEST */
     background-color: bisque;
@@ -59,4 +60,20 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+.arrow {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.arrow.top {
+    top: 10px;
+}
+.arrow.dwn {
+    bottom: 10px;
+}
+.arrow i {
+    filter: invert(1);
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.5);
 }
