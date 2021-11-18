@@ -101,3 +101,7 @@
 .thumbs:hover i {
     display: block;
 }
+.thumbs i:hover {
+    transition: 1s;
+    color: rgba(255, 255, 255, 0.6);
+}
