@@ -78,6 +78,18 @@ const upArrow = document.querySelector(`.top`);
 upArrow.addEventListener(`click`, function(){
     bigImgs[selectImage].classList.remove(`active`)
     thumbsImgs[selectImage].classList.remove(`activegrey`)
+    if ( selectImage > 0 ) {
+        selectImage--;
+    } else {
+        selectImage = items.length - 1;
+    }
+    bigImgs[selectImage].classList.add('active');
+    thumbsImgs[selectImage].classList.add('activegrey');
+})
+const dwnArrow = document.querySelector(`.dwn`);
+dwnArrow.addEventListener(`click`, function(){
+    bigImgs[selectImage].classList.remove(`active`)
+    thumbsImgs[selectImage].classList.remove(`activegrey`)
     if( selectImage < items.length - 1 ) {
         selectImage++;
         console.log(selectImage)
