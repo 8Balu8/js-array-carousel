@@ -36,13 +36,31 @@ const text = [
 ];
 
 const imgContainer = document.querySelector(`.img-container`)
-console.log(imgContainer)
+const thumbsContainer = document.querySelector(`.thumbs-img`)
+console.log(thumbsContainer)
+
 for (let i = 0; i < items.length; i++) {
     const thisImg = items[i];
     const thisTitle = title[i];
     const thisText = text[i];
 
-    console.log(thisImg)
-    console.log(thisTitle)
-    console.log(thisText)
+    const newImage = `
+        <div class="single-img active">
+            <img src="${thisImg}" alt="${i}">
+            <div class="single-img-text">
+                <h3>${thisTitle}</h3>
+                <p>${thisText}</p>
+            </div>
+        </div>
+    `;
+
+    imgContainer.innerHTML += newImage;
+
+    const newImageThumbs = `
+        <div class="single-thumbs-img active">
+            <img src="${thisImg}" alt="${i}">
+        </div>
+    `;
+
+    thumbsContainer.innerHTML += newImageThumbs;
 }
